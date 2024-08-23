@@ -1,0 +1,60 @@
+/* Add a wrapper div around the containers for Flexbox layout */
+.container-wrapper {
+    display: flex;
+    justify-content: space-between; /* Distribute containers evenly */
+    align-items: flex-start; /* Align items at the top */
+    width: 100%;
+    margin: 0 auto; /* Center the entire layout */
+    padding: 0; /* Adjust padding as needed */
+    box-sizing: border-box;
+    position: relative; /* Allow positioning of child elements */
+}
+
+/* Flex items */
+.container, .container-2, .container-3 {
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Specific container widths */
+.container {
+    width: 300px;
+    left: 0; /* Stick to the left */
+}
+
+.container-2 {
+    width: 930px; /* Central, main content area */
+    margin: 0 20px; /* Add some space between the side containers */
+}
+
+.container-3 {
+    width: 300px;
+    right: 0; /* Stick to the right */
+}
+
+/* Maintaining original design elements */
+.container, .container-2, .container-3 {
+    padding: 10px;
+    background-color: #1d35a038;
+    border: 1px solid #1d35a038; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Responsive Design */
+/* Adjust layout for smaller screens */
+@media (max-width: 1200px) {
+    .container-2 {
+        width: 100%; /* Allow the main content area to expand */
+        margin: 0;
+    }
+    .container-wrapper {
+        flex-direction: column; /* Stack the containers vertically */
+        align-items: center;
+    }
+    .container, .container-3 {
+        width: 100%; /* Expand the side containers to full width */
+        margin-bottom: 20px; /* Add space between containers when stacked */
+    }
+}
